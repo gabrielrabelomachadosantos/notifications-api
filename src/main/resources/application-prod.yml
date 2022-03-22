@@ -17,7 +17,7 @@ spring:
           starttls:
             enable: true
   rabbitmq:
-    addresses: amqps://b-516f056b-672b-4725-aa79-db9f1ab5e10a.mq.us-east-1.amazonaws.com:5671
+    addresses: amqps://b-4743f646-c577-44c5-bb16-6877cb854151.mq.us-east-1.amazonaws.com:5671
     username: ENC(z8hSoHcdzcB8jiUIrDJ3SHiscxcZfSHRZsu8cRrI05LhBvDHKhCifrmSrVPWqWxz)
     password: ENC(DHiN8ekeQpcyW7QtYsw8lYR/84lpOA3+9/zfhTiu2GTwDUGHulYhNmrX6gNsPX09t9vzCrDQ+aOt669OkZUmwQ==)
     queue:
