@@ -1,0 +1,41 @@
+server:
+  port: 5000
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: gabriel.santos.purchase.api@gmail.com
+    password: ENC(KDoqufa97vINYMsrJD2S7ny24ISgThasv9NElUFhfVNZL2LKqdsCWjAnDSu8AOWuRS45fe6BfyWmmiB7d10K6w==)
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+          starttls:
+            enable: true
+  rabbitmq:
+    addresses: amqps://b-516f056b-672b-4725-aa79-db9f1ab5e10a.mq.us-east-1.amazonaws.com:5671
+    username: ENC(z8hSoHcdzcB8jiUIrDJ3SHiscxcZfSHRZsu8cRrI05LhBvDHKhCifrmSrVPWqWxz)
+    password: ENC(DHiN8ekeQpcyW7QtYsw8lYR/84lpOA3+9/zfhTiu2GTwDUGHulYhNmrX6gNsPX09t9vzCrDQ+aOt669OkZUmwQ==)
+    queue:
+      registered-purchase: REGISTERED_PURCHASE
+      pending-purchase: PENDING_PURCHASE_APPROVE
+      approved-purchase: APPROVED_PURCHASE
+      reproved-purchase: REPROVED_PURCHASE
+      update-purchase-status: UPDATE_PURCHASE_STATUS
+    listener:
+      simple:
+        retry:
+          max-attempts: 5
+      direct:
+        auto-startup: true
+    template:
+      retry:
+        max-attempts: 5
+
+jasypt:
+  encryptor:
+    password: ${JASYPT_ENCRYPTION_KEY}
