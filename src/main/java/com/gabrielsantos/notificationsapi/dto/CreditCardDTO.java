@@ -8,7 +8,7 @@ import java.util.Date;
 @Data
 public class CreditCardDTO {
 
-    private Long number;
+    private String number;
 
     @JsonFormat(pattern = "yyyy/MM")
     private Date expiringDate;
