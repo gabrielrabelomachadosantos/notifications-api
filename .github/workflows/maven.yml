@@ -49,24 +49,24 @@ jobs:
           name: notifications-api
           path: target/notifications-api.jar
 
-  deploy:
-    needs: build
-    name: Deploy on AWS Elastic Beanstalk
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download .jar
-        uses: actions/download-artifact@v2
-        with:
-          name: notifications-api
-      - name: Deploy to EB
-        uses: einaregilsson/beanstalk-deploy@v20
-        with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: gabrielsantos-apps
-          environment_name: Notifications-API-Env
-          version_label: notifications-api-${{github.sha}}
-          region: us-east-1
-          deployment_package: notifications-api.jar
-          wait_for_environment_recovery: 120
-          use_existing_version_if_available: true
+  #deploy:
+    #needs: build
+    #name: Deploy on AWS Elastic Beanstalk
+    #runs-on: ubuntu-latest
+    #steps:
+      #- name: Download .jar
+        #uses: actions/download-artifact@v2
+        #with:
+          #name: notifications-api
+      #- name: Deploy to EB
+        #uses: einaregilsson/beanstalk-deploy@v20
+        #with:
+          #aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          #aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          #application_name: gabrielsantos-apps
+          #environment_name: Notifications-API-Env
+          #version_label: notifications-api-${{github.sha}}
+          #region: us-east-1
+          #deployment_package: notifications-api.jar
+          #wait_for_environment_recovery: 120
+          #use_existing_version_if_available: true
