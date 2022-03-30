@@ -22,7 +22,6 @@ This API is also part of a greater implementation of other two APIs that simulat
 
 ## 🔗 Links
 
-- 📖 Swagger Documentation:
 - 😄 My LinkedIn Profile: https://www.linkedin.com/in/gabriel-santos-20737b171
 - 🔗 Related APIs:
     * https://github.com/gabrielrabelomachadosantos/purchase-api
